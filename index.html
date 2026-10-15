@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiriani Boys Senior School</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #102a56;
+    --blue: #2463a6;
+    --gold: #ffc857;
+    --light: #f4f7fc;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light);
+    color: #243047;
+    line-height: 1.6;
+}
+
+/* HEADER AND SCHOOL LOGO */
+header {
+    background: var(--navy);
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.school-crest {
+    background-image: url('data:image/jpeg;base64,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');
+    background-position: center;
+    background-size: cover;
+    padding: 22px 18%;
+}
+
+.school-brand strong {
+    display: block;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.school-brand small {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+nav button:hover,
+nav button.active {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* PAGE NAVIGATION */
+.page {
+    display: none;
+    animation: fadeIn .3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HOME HERO */
+.hero {
+    min-height: 480px;
+    padding: 85px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #102a56, #2463a6);
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 62px);
+    line-height: 1.15;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    max-width: 650px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+.button-outline {
+    border-color: white;
+    background: transparent;
+    color: white;
+}
+
+/* GENERAL SECTIONS */
+section.content-section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    color: var(--navy);
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #68758a;
+}
+
+.about {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(16,42,86,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #68758a;
+}
+
+/* PAGE HEADERS */
+.page-banner {
+    background: linear-gradient(120deg, var(--navy), var(--blue));
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.page-banner h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    color: #e0e9f7;
+}
+
+.inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 24px;
+}
+
+/* STUDENT DIRECTORY */
+.search-box {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ccd6e5;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th, td {
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid #e1e8f2;
+}
+
+th {
+    background: var(--navy);
+    color: white;
+}
+
+tr:hover {
+    background: #edf3fb;
+}
+
+.note {
+    padding: 14px;
+    background: #fff5d8;
+    border-left: 4px solid var(--gold);
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.gallery-item {
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #102a56, #4389c7);
+}
+
+.gallery-item:nth-child(2) {
+    background: linear-gradient(135deg, #28583b, #78a66e);
+}
+
+.gallery-item:nth-child(3) {
+    background: linear-gradient(135deg, #704b7d, #b78bc5);
+}
+
+.gallery-item:nth-child(4) {
+    background: linear-gradient(135deg, #805020, #e3b457);
+}
+
+.gallery-item:nth-child(5) {
+    background: linear-gradient(135deg, #155968, #60b6c7);
+}
+
+.gallery-item:nth-child(6) {
+    background: linear-gradient(135deg, #802d40, #d98091);
+}
+
+/* FORMS */
+.form-box {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #102a5610;
+}
+
+.form-box label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd6e5;
+    border-radius: 6px;
+}
+
+.form-box textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 12px;
+    color: #23653a;
+    font-weight: bold;
+}
+
+/* CONTACT AND ADMISSIONS */
+.highlight {
+    background: #e8effa;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #091831;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* BACK TO TOP */
+.back-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+}
+
+.back-top.show {
+    display: block;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 950px) {
+    header {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav button {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 12px 5%;
+    }
+
+    .school-crest {
+        width: 52px;
+        height: 60px;
+    }
+
+    .school-brand strong {
+        font-size: 13px;
+    }
+
+    .school-brand small {
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 60px 7%;
+    }
+
+    section.content-section {
+        padding: 45px 7%;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <div class="school-crest"></div>
+
+        <div class="school-brand">
+            <strong>KIRIANI BOYS</strong>
+            <strong>SENIOR SCHOOL</strong>
+            <small>STRIVE FOR EXCELLENCE</small>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-expanded="false">☰ MENU</button>
+
+    <nav id="mainNav">
+        <button class="active" data-page="home">Home</button>
+        <button data-page="about">About</button>
+        <button data-page="academics">Academics</button>
+        <button data-page="students">Students</button>
+        <button data-page="sports">Sports</button>
+        <button data-page="gallery">Gallery</button>
+        <button data-page="admissions">Admissions</button>
+        <button data-page="contact">Contact</button>
+    </nav>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+<div class="page active" id="home">
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Welcome to Kiriani Boys Senior School</div>
+
+            <h1>
+                Strive for Excellence.<br>
+                <span>Inspire the Future.</span>
+            </h1>
+
+            <p>
+                Welcome to Kiriani Boys Senior School, where knowledge,
+                creativity, discipline and hard work help learners
+                prepare for a brighter tomorrow.
+            </p>
+
+            <button class="button" data-go="about">
+                Explore Our School →
+            </button>
+
+            <button class="button button-outline" data-go="admissions">
+                Join Our School
+            </button>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title">
+            <h2>Welcome to Our School</h2>
+            <p>Building knowledge, character and confidence.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>Quality Education</h3>
+                <p>Developing knowledge, problem-solving skills and a love of learning.</p>
+                <button class="button" data-go="academics">Learn More →</button>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏆</div>
+                <h3>Sports and Talent</h3>
+                <p>Encouraging teamwork, creativity, discipline and healthy competition.</p>
+                <button class="button" data-go="sports">Explore Sports →</button>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎓</div>
+                <h3>Student Community</h3>
+                <p>Helping learners grow into responsible and confident individuals.</p>
+                <button class="button" data-go="students">View Students →</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight">
+        <h2>Ready to Learn More?</h2>
+        <p>Visit our admissions section for information about joining the school.</p>
+        <button class="button" data-go="admissions">Admissions Information →</button>
+    </section>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="about">
+    <div class="page-banner">
+        <h1>About Our School</h1>
+        <p>Building knowledge, character and confidence.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="about">
+            <h2>Who We Are</h2>
+            <p>
+                Kiriani Boys Senior School is committed to creating a
+                supportive environment where learners can develop
+                academically, socially and personally.
+            </p>
+            <br>
+            <h2>Our Motto</h2>
+            <p><strong>STRIVE FOR EXCELLENCE</strong></p>
+            <br>
+            <h2>Our Values</h2>
+        </div>
+
+        <div class="cards" style="margin-top:25px">
+            <div class="card">
+                <div class="icon">🤝</div>
+                <h3>Integrity</h3>
+                <p>Practising honesty and responsibility.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎯</div>
+                <h3>Discipline</h3>
+                <p>Developing good habits and self-control.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌟</div>
+                <h3>Excellence</h3>
+                <p>Working hard and striving to achieve our best.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ACADEMICS PAGE -->
+<div class="page" id="academics">
+    <div class="page-banner">
+        <h1>Academics</h1>
+        <p>Knowledge is the foundation of success.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="section-title">
+            <h2>Our Learning Areas</h2>
+            <p>Developing skills for school, work and everyday life.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card"><div class="icon">🧮</div><h3>Mathematics</h3><p>Logical thinking and problem-solving.</p></div>
+            <div class="card"><div class="icon">🧪</div><h3>Sciences</h3><p>Exploration, experiments and discovery.</p></div>
+            <div class="card"><div class="icon">📖</div><h3>Languages</h3><p>Reading, writing and communication.</p></div>
+            <div class="card"><div class="icon">🌍</div><h3>Humanities</h3><p>People, history, society and the world.</p></div>
+            <div class="card"><div class="icon">💻</div><h3>Computer Studies</h3><p>Digital literacy and technology skills.</p></div>
+            <div class="card"><div class="icon">📝</div><h3>Revision</h3><p>Practice, preparation and steady improvement.</p></div>
+        </div>
+    </section>
+</div>
+
+<!-- STUDENTS PAGE -->
+<div class="page" id="students">
+    <div class="page-banner">
+        <h1>Student Directory</h1>
+        <p>Search the sample student records.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="note">
+            These are fictional sample names for demonstrating the website.
+            They are not a verified list of enrolled students.
+        </div>
+
+        <input type="search" id="studentSearch" class="search-box"
+            placeholder="Search by name, class or admission number...">
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Student Name</th>
+                        <th>Class</th>
+                        <th>Admission Number</th>
+                    </tr>
+                </thead>
+                <tbody id="studentRows"></tbody>
+            </table>
+        </div>
+
+        <p id="studentCount" style="margin-top:12px"></p>
+    </section>
+</div>
+
+<!-- SPORTS PAGE -->
+<div class="page" id="sports">
+    <div class="page-banner">
+        <h1>Sports and Activities</h1>
+        <p>Healthy bodies, teamwork and school spirit.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="cards">
+            <div class="card"><div class="icon">⚽</div><h3>Football</h3><p>Teamwork, stamina and sportsmanship.</p></div>
+            <div class="card"><div class="icon">🏃</div><h3>Athletics</h3><p>Speed, endurance and determination.</p></div>
+            <div class="card"><div class="icon">🏐</div><h3>Volleyball</h3><p>Coordination and team strategy.</p></div>
+            <div class="card"><div class="icon">♟️</div><h3>Clubs</h3><p>Creativity, leadership and new interests.</p></div>
+            <div class="card"><div class="icon">🎵</div><h3>Music</h3><p>Talent, confidence and creative expression.</p></div>
+            <div class="card"><div class="icon">🌱</div><h3>Environment</h3><p>Responsibility and care for our surroundings.</p></div>
+        </div>
+        <div class="note" style="margin-top:25px">
+            Confirm which sports and clubs are currently offered by the school.
+        </div>
+    </section>
+</div>
+
+<!-- GALLERY PAGE -->
+<div class="page" id="gallery">
+    <div class="page-banner">
+        <h1>School Gallery</h1>
+        <p>Moments of learning, teamwork and school life.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="note">
+            These are colourful placeholders, not actual school photographs.
+            Replace them with real school photos you have permission to use.
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">🏫<br>School Life</div>
+            <div class="gallery-item">🌳<br>Environment</div>
+            <div class="gallery-item">🎨<br>Creative Arts</div>
+            <div class="gallery-item">⚽<br>Sports Day</div>
+            <div class="gallery-item">💻<br>Technology</div>
+            <div class="gallery-item">🎓<br>School Events</div>
+        </div>
+    </section>
+</div>
+
+<!-- ADMISSIONS PAGE -->
+<div class="page" id="admissions">
+    <div class="page-banner">
+        <h1>Admissions</h1>
+        <p>Take the next step towards joining our school.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="section-title">
+            <h2>How to Enquire</h2>
+            <p>Contact the school to confirm requirements, available places and dates.</p>
+        </div>
+
+        <div class="form-box">
+            <h3>Admissions Enquiry Form</h3>
+
+            <form id="admissionForm">
+                <label for="guardian">Parent or Guardian Name</label>
+                <input id="guardian" required>
+
+                <label for="learner">Learner Name</label>
+                <input id="learner" required>
+
+                <label for="classApplying">Class Applying For</label>
+                <select id="classApplying" required>
+                    <option value="">Choose class</option>
+                    <option>Grade 10</option>
+                    <option>Grade 11</option>
+                    <option>Grade 12</option>
+                    <option>Other / Need guidance</option>
+                </select>
+
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="tel" required>
+
+                <label for="admissionMessage">Message</label>
+                <textarea id="admissionMessage" placeholder="Your enquiry..."></textarea>
+
+                <button class="button" type="submit">Prepare Enquiry</button>
+            </form>
+
+            <p class="form-message" id="admissionResult"></p>
+            <button class="button" id="copyEnquiry" hidden>Copy Enquiry</button>
+        </div>
+
+        <div class="note" style="margin-top:25px">
+            This form prepares an enquiry in your browser. It does not submit
+            an application to the school or send a message automatically.
+        </div>
+    </section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="contact">
+    <div class="page-banner">
+        <h1>Contact Us</h1>
+        <p>We welcome enquiries from parents and the community.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🏫</div>
+                <h3>School</h3>
+                <p>Kiriani Boys Senior School</p>
+            </div>
+            <div class="card">
+                <div class="icon">📍</div>
+                <h3>Location</h3>
+                <p>Tharaka-Nithi County, Kenya</p>
+            </div>
+            <div class="card">
+                <div class="icon">✉️</div>
+                <h3>Email</h3>
+                <p><a href="mailto:kirianiboys@gmail.com">kirianiboys@gmail.com</a></p>
+            </div>
+            <div class="card">
+                <div class="icon">☎️</div>
+                <h3>Telephone</h3>
+                <p><a href="tel:0707666981">0707 666 981</a></p>
+            </div>
+        </div>
+
+        <div class="note" style="margin-top:25px">
+            Verify the contact details before publishing the website.
+        </div>
+
+        <div class="form-box" style="margin-top:30px">
+            <h3>Send a Message</h3>
+
+            <form id="contactForm">
+                <label for="contactName">Your Name</label>
+                <input id="contactName" required>
+
+                <label for="contactEmail">Your Email</label>
+                <input id="contactEmail" type="email" required>
+
+                <label for="subject">Subject</label>
+                <input id="subject" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+
+                <button class="button" type="submit">Check Message</button>
+            </form>
+
+            <p class="form-message" id="contactResult"></p>
+        </div>
+    </section>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>KIRIANI BOYS SENIOR SCHOOL</h3>
+    <p><span>STRIVE FOR EXCELLENCE</span></p>
+    <p>Learning Today, Leading Tomorrow.</p>
+    <p>&copy; <span id="year"></span> Kiriani Boys Senior School. All rights reserved.</p>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+// CLICKABLE NAVIGATION
+const pages = document.querySelectorAll(".page");
+const navButtons = document.querySelectorAll("nav button[data-page]");
+const nav = document.getElementById("mainNav");
+const menuToggle = document.getElementById("menuToggle");
+
+function showPage(pageId, updateHistory = true) {
+    if (!document.getElementById(pageId) ||
+        !document.getElementById(pageId).classList.contains("page")) {
+        pageId = "home";
+    }
+
+    pages.forEach(page => {
+        page.classList.toggle("active", page.id === pageId);
+    });
+
+    navButtons.forEach(button => {
+        button.classList.toggle("active", button.dataset.page === pageId);
+    });
+
+    if (updateHistory) {
+        history.pushState(null, "", "#" + pageId);
+    }
+
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+navButtons.forEach(button => {
+    button.addEventListener("click", () => showPage(button.dataset.page));
+});
+
+document.querySelectorAll("[data-go]").forEach(button => {
+    button.addEventListener("click", () => showPage(button.dataset.go));
+});
+
+// MOBILE MENU
+menuToggle.addEventListener("click", () => {
+    const opened = nav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(opened));
+});
+
+window.addEventListener("popstate", () => {
+    showPage(location.hash.substring(1) || "home", false);
+});
+
+window.addEventListener("load", () => {
+    showPage(location.hash.substring(1) || "home", false);
+});
+
+// FOOTER YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// SAMPLE STUDENT DIRECTORY
+const students = [
+    ["Brian Mwangi", "Grade 10", "KBS-001"],
+    ["Kevin Mutua", "Grade 10", "KBS-002"],
+    ["Daniel Kamau", "Grade 10", "KBS-003"],
+    ["Peter Njoroge", "Grade 10", "KBS-004"],
+    ["Samuel Kiptoo", "Grade 10", "KBS-005"],
+    ["David Maina", "Grade 11", "KBS-006"],
+    ["Ian Mwenda", "Grade 11", "KBS-007"],
+    ["Joseph Kimani", "Grade 11", "KBS-008"],
+    ["Mark Muthomi", "Grade 12", "KBS-009"],
+    ["James Karanja", "Grade 12", "KBS-010"]
+];
+
+function displayStudents(search = "") {
+    const filtered = students.filter(student =>
+        student.join(" ").toLowerCase().includes(search.toLowerCase())
+    );
+
+    document.getElementById("studentRows").innerHTML =
+        filtered.map((student, index) => `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${student[0]}</td>
+                <td>${student[1]}</td>
+                <td>${student[2]}</td>
+            </tr>
+        `).join("");
+
+    document.getElementById("studentCount").textContent =
+        `Showing ${filtered.length} of ${students.length} sample students.`;
+}
+
+displayStudents();
+
+document.getElementById("studentSearch").addEventListener("input", event => {
+    displayStudents(event.target.value);
+});
+
+// ADMISSIONS ENQUIRY
+let enquiryText = "";
+
+document.getElementById("admissionForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    enquiryText =
+        "KIRIANI BOYS SENIOR SCHOOL - ADMISSIONS ENQUIRY\n\n" +
+        "Parent/Guardian: " + document.getElementById("guardian").value + "\n" +
+        "Learner: " + document.getElementById("learner").value + "\n" +
+        "Class: " + document.getElementById("classApplying").value + "\n" +
+        "Phone: " + document.getElementById("phone").value + "\n" +
+        "Message: " + document.getElementById("admissionMessage").value;
+
+    document.getElementById("admissionResult").textContent =
+        "Enquiry prepared. Click Copy Enquiry to copy the details.";
+
+    document.getElementById("copyEnquiry").hidden = false;
+});
+
+document.getElementById("copyEnquiry").addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(enquiryText);
+        document.getElementById("admissionResult").textContent =
+            "Enquiry copied. You can now paste it into an email or message.";
+    } catch {
+        document.getElementById("admissionResult").textContent =
+            enquiryText;
+    }
+});
+
+// CONTACT FORM DEMONSTRATION
+document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    document.getElementById("contactResult").textContent =
+        "Your message has been checked in this demo. It has NOT been sent. " +
+        "A backend or email service is required to receive messages.";
+});
+
+// BACK TO TOP
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+    backTop.classList.toggle("show", window.scrollY > 300);
+});
+
+backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>
